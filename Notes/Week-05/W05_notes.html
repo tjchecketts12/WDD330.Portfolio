@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+      <title>WDD 330 W05 Notes</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+      <meta name="description" content="WDD 330 W05 Notes">
+      <link rel="stylesheet" href="#">    
+</head>
+
+<body>
+
+    <header>
+        <h1>W05 Notes</h1>
+        
+    </header>
+
+<main>
+    <pre>
+      <h2>CH 10 Testing and Debugging</h2>
+        -Bugs are unavoidable in code, and it’s best to find them early rather than later.
+        -JavaScript can be put into strict mode using the string "use strict" . This can be used in a whole file or just a single function.
+        -Linting tools can be used to ensure your code follows good practice and conventions.
+        -Feature detection can check whether a method is supported before calling it, helping to avoid an exception being thrown.
+        -The console and browser’s built-in debugging tool can be used to interactively find and fix bugs in code.
+        -Exceptions can be thrown using the "throw" statement.
+        -An error object is created when an exception occurs.
+        -Any code placed inside a "try" block will pass any error objects to a "catch" block when an exception occurs. 
+         Any code inside a "finally" block will run if an exception does or does not occur.
+        -Test-driven development is the practice of writing tests that fail, then writing the code that passes the test, 
+         then refactoring the code every time a new feature is implemented.
+        -The Jest framework can be used to test your code.
+      <br><br>
+    </pre>
+    
+    <script>
+        function amIOldEnough(age){
+            if (age < 12) {
+                alert(age);
+                return 'No, sorry.';
+            } else if (age < 18) {
+                return 'Only if you are accompanied by an adult.';
+            }
+            else {
+                return 'Yep, come on in!';
+            }
+        }
+        amIOldEnough(21);
+    </script>
+
+    <script>
+        
+        function amIOldEnough(age){
+            console.log(age);
+                if (age < 12) {
+                console.log('In the if with ${age}');
+                return 'No, sorry.';
+                } else if (age < 18) {
+                console.log('Int the else-if with ${age}');
+                return 'Only if you are accompanied by an adult.';
+                }
+                else {
+                console.log('Int the else with ${age}');
+                return 'Yep, come on in!';
+                }
+        }
+        amIOldEnough(21);
+    </script>
+    <script>
+        const error = new Error('Oops, something went wrong');
+    </script>
+    <script>
+        function factorsOf(n) {
+            if(Number.isNaN(Number(n))) {
+                throw new RangeError('Argument Error: Value must be an integer');
+            }
+            if(n < 0) {
+                throw new RangeError('Argument Error: Number must be positive');
+            }
+            if(!Number.isInteger(n)) {
+                throw new RangeError('Argument Error: Number must be an integer');
+            }
+            const factors = [];
+            for (let i=1 , max = Math.sqrt(n); i <= max ; i++) {
+                if (n%i === 0){
+                factors.push(i,n/i);
+                }
+            }
+            return factors.sort((a,b) => a - b);
+        }
+    </script>
+ 
+</main>    
+</body>
+</html>
