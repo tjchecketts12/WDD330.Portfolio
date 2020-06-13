@@ -55,74 +55,55 @@
             -Filling Our Brush with Color - do so with the strokeStyle or fillStyle properties.
             -Drawing a Rectangle to the Canvas - do this by calling the fillRect and strokeRect methods.  Both of these methods take the X and Y 
              coordinates where you want to begin drawing the fill or the stroke, and the width and height of the rectangle. 
-            -Pathscreate a blueprint for your lines, arcs, and shapes, but paths are invisible until you give them a stroke! With more complex shapes, 
+            -Paths create a blueprint for your lines, arcs, and shapes, but paths are invisible until you give them a stroke! With more complex shapes, 
              we need to take three steps: layout the path, stroke the path, and fill the path. 
             -The signature for the arc method is: arc(x, y, radius, startAngle, endAngle, anticlockwise). 
         -Manipulating Images 
             -We can use the getImageData method from the Canvas API to manipulate the pixels of that image.
             -getImageData takes four parameters, corresponding to the four corners of a rectangular piece of the canvas we’d like to inspect.
-        -Animations 
-            -CSS animations, unlike transitions, allow you to control each step of an animation via keyframes.  
+            -Converting an Image from Color to Black and White
             -A keyframe is a snapshot that defines a starting or end point of any smooth transition.   
             -The lack of powerful processors on many mobile devices makes CSS animations a great alternative to weighty, CPU-intensive JavaScript animation.
             -The transition properties allow for multiple transitions in one call.
     </pre>
     
     <script>
-        function amIOldEnough(age){
-            if (age < 12) {
-                alert(age);
-                return 'No, sorry.';
-            } else if (age < 18) {
-                return 'Only if you are accompanied by an adult.';
-            }
-            else {
-                return 'Yep, come on in!';
-            }
+        function manipulateImage() {
+            var canvas = document.getElementById("demo7");
+            var context = canvas.getContext("2d");
+            var image = document.getElementById("secondImage");
+            context.drawImage(image, 68, 68);
+
+            var imageData = context.getImageData(0, 0, 200, 200);
+                   
+            for (var i = 0; i < imageData.data.length; i += 4) {
+            var red = imageData.data[i];
+            var green = imageData.data[i + 1];
+            var blue = imageData.data[i + 2];
+
+            var grayscale = red * 0.3 + green * 0.59 + blue * 0.11;
+
+            imageData.data[i] = grayscale; 
+            imageData.data[i + 1] = grayscale;  
+            imageData.data[i + 2] = grayscale; 
+                    }
+            context.putImageData(imageData, 0, 0);
+
+           
         }
-        amIOldEnough(21);
+
+        
     </script>
 
     <script>
         
-        function amIOldEnough(age){
-            console.log(age);
-                if (age < 12) {
-                console.log('In the if with ${age}');
-                return 'No, sorry.';
-                } else if (age < 18) {
-                console.log('Int the else-if with ${age}');
-                return 'Only if you are accompanied by an adult.';
-                }
-                else {
-                console.log('Int the else with ${age}');
-                return 'Yep, come on in!';
-                }
-        }
-        amIOldEnough(21);
+        
     </script>
     <script>
-        const error = new Error('Oops, something went wrong');
+       
     </script>
     <script>
-        function factorsOf(n) {
-            if(Number.isNaN(Number(n))) {
-                throw new RangeError('Argument Error: Value must be an integer');
-            }
-            if(n < 0) {
-                throw new RangeError('Argument Error: Number must be positive');
-            }
-            if(!Number.isInteger(n)) {
-                throw new RangeError('Argument Error: Number must be an integer');
-            }
-            const factors = [];
-            for (let i=1 , max = Math.sqrt(n); i <= max ; i++) {
-                if (n%i === 0){
-                factors.push(i,n/i);
-                }
-            }
-            return factors.sort((a,b) => a - b);
-        }
+       
     </script>
  
 </main>    
