@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+      <title>WDD 330 W08 Notes</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+      <meta name="description" content="WDD 330 W08 Notes">
+      <link rel="stylesheet" href="#">    
+</head>
+
+<body>
+
+    <header>
+        <h1>W08 Notes</h1>
+        
+    </header>
+
+<main>
+    <pre>
+      <h2>CH 8 CSS3 Transforms and Transitions</h2>
+        -Transforms - manipulate an element's appearance. 
+            -Translation - allow you to move elements left, right, up, or down. Move elements without impacting the flow of the document.
+            -Scaling - defined factors horizontally then vertically. The center stays in the same place as its dimensions change.
+                       No impact on the document flow. 
+            -Rotation - rotates an element around the point of origin by a specified angle value. The point of origin is the element's center.
+                        positive degrees move clockwise, and negative moves it counter clockwise. 
+            -Skew - specifies a skew along the x and y axes. If the second parameter is omitted, the skew will only occur on the x axis. 
+            -Changing the Origin of the Transform - changes the center of the object.
+            - The order of transform functions does matter: if you rotate before translating, your translate direction will be on the rotated axis.
+        -Transitions allow the values of CSS properties to change over time, essentially providing simple animations. 
+            -Transitions allow the values of CSS properties to change over time, essentially providing simple animations.  
+            -The transition-duration property sets how long the transition will take: the duration of time it takes to go from the default state to the transitioned state.  
+            -The transition-timing-function lets you control the pace of the transition in even more granular detail.
+            -The transition properties allow for multiple transitions in one call.
+        -Animations 
+            -CSS animations, unlike transitions, allow you to control each step of an animation via keyframes.  
+            -A keyframe is a snapshot that defines a starting or end point of any smooth transition.   
+            -The lack of powerful processors on many mobile devices makes CSS animations a great alternative to weighty, CPU-intensive JavaScript animation.
+            -The transition properties allow for multiple transitions in one call.
+
+      <br><br>
+      <h2>CH 12 Canvas, SVG, and Drag and Drop</h2>
+        -Canvas:  
+            -With canvas, we can draw shapes and lines, arcs and text, gradients and patterns. In addition, canvas gives us the power
+             to manipulate pixels in images and even video.
+            -The first step to using canvas is to add a canvas element to the page:
+            <canvas>
+                Sorry! Your browser doesn’t support Canvas.
+            </canvas>
+            -The canvas element takes both a width and height attribute, which must also be set.
+            <canvas id="myCanvas" class="myCanvas" width="200" height="200">
+                Sorry! Your browser doesn’t support Canvas.
+            </canvas>
+            -Drawing on the Canvas happens via the Canvas JavaScript API.
+            -Filling Our Brush with Color - do so with the strokeStyle or fillStyle properties.
+            -Drawing a Rectangle to the Canvas - do this by calling the fillRect and strokeRect methods.  Both of these methods take the X and Y 
+             coordinates where you want to begin drawing the fill or the stroke, and the width and height of the rectangle. 
+            -Pathscreate a blueprint for your lines, arcs, and shapes, but paths are invisible until you give them a stroke! With more complex shapes, 
+             we need to take three steps: layout the path, stroke the path, and fill the path. 
+            -The signature for the arc method is: arc(x, y, radius, startAngle, endAngle, anticlockwise). 
+        -Manipulating Images 
+            -We can use the getImageData method from the Canvas API to manipulate the pixels of that image.
+            -getImageData takes four parameters, corresponding to the four corners of a rectangular piece of the canvas we’d like to inspect.
+        -Animations 
+            -CSS animations, unlike transitions, allow you to control each step of an animation via keyframes.  
+            -A keyframe is a snapshot that defines a starting or end point of any smooth transition.   
+            -The lack of powerful processors on many mobile devices makes CSS animations a great alternative to weighty, CPU-intensive JavaScript animation.
+            -The transition properties allow for multiple transitions in one call.
+    </pre>
+    
+    <script>
+        function amIOldEnough(age){
+            if (age < 12) {
+                alert(age);
+                return 'No, sorry.';
+            } else if (age < 18) {
+                return 'Only if you are accompanied by an adult.';
+            }
+            else {
+                return 'Yep, come on in!';
+            }
+        }
+        amIOldEnough(21);
+    </script>
+
+    <script>
+        
+        function amIOldEnough(age){
+            console.log(age);
+                if (age < 12) {
+                console.log('In the if with ${age}');
+                return 'No, sorry.';
+                } else if (age < 18) {
+                console.log('Int the else-if with ${age}');
+                return 'Only if you are accompanied by an adult.';
+                }
+                else {
+                console.log('Int the else with ${age}');
+                return 'Yep, come on in!';
+                }
+        }
+        amIOldEnough(21);
+    </script>
+    <script>
+        const error = new Error('Oops, something went wrong');
+    </script>
+    <script>
+        function factorsOf(n) {
+            if(Number.isNaN(Number(n))) {
+                throw new RangeError('Argument Error: Value must be an integer');
+            }
+            if(n < 0) {
+                throw new RangeError('Argument Error: Number must be positive');
+            }
+            if(!Number.isInteger(n)) {
+                throw new RangeError('Argument Error: Number must be an integer');
+            }
+            const factors = [];
+            for (let i=1 , max = Math.sqrt(n); i <= max ; i++) {
+                if (n%i === 0){
+                factors.push(i,n/i);
+                }
+            }
+            return factors.sort((a,b) => a - b);
+        }
+    </script>
+ 
+</main>    
+</body>
+</html>
