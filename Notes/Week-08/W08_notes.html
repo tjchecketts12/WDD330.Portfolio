@@ -64,6 +64,25 @@
             -Unlike canvas, images created with SVG are available via the DOM.
             -Drawing a circle in SVG is arguably easier than drawing a circle with canvas.
             -View an SVG file, you simply open it via the File menu in any browser that supports SVG.
+            -If you want to create complex shapes, the code begins to look a little scary.
+            -Instead of creating SVG images by hand, we can use an image editor to help. 
+        -Both canvas and SVG allow you to draw custom shapes, paths, and fonts. 
+            -Canvas allows for pixel manipulation, as we saw when we turned our video from color to black and white. 
+            -Downside of canvas is that it operates in what’s known asimmediate mode. This means that if you ever want 
+             to add more to the canvas, you’re unable to simply add to what’s already there. 
+            -There’s also no access to what’s drawn on the canvas via the DOM.
+            -What you draw to SVG is accessible via the DOM, because its mode isretained mode, meaning that the structure of the image is preserved in
+             the XML document that describes it.
+            -SVG also has, at this time, a more complete set of tools to help you work with it, such as the Raphaël library and Inkscape.
+            -Can’t manipulate SVG images the way you can manipulate pixels on canvas.
+        -Drag and Drop
+            -This API allows us to specify that certain elements are draggable, and then specify what should happen when these draggable elements 
+             are dragged over or dropped onto other elements on the page.
+            -Two major kinds of functionality you can implement with Drag and Drop: dragging files from your computer into a web page—in 
+             combination with the File API—or dragging elements into other elements on the same page. 
+            -Make elements draggable using the draggable attribute and set the value to true 
+            -Note that draggable isnota Boolean attribute, so you have to explicitly set it to true.
+
     </pre>
     <canvas>
         Sorry! Your browser doesn’t support Canvas.
@@ -99,11 +118,19 @@
 
         
     </script>
+
+    <script>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
             <circle cx="50" cy="50" r="25" fill="red"/>
         </svg>
 
-    <script>
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 400 400">
+            <desc>Drawing a rectangle</desc>
+            <rect x="10" y="10" width="100" height="100"  
+            fill="blue" stroke="red" stroke-width="3"  />  
+        </svg>
+
+    
         
         
     </script>
