@@ -18,138 +18,19 @@
 <main>
     <h2>Doing Stuff With Web Things</h2>        
     <pre>
-    Objects are created to represent entities of the real world. eg. users
-    Actions are represented in JavaScript by functions
-    It’s common that an object method needs to access the information stored in the object to do its job.
-    "this" is not bound
+    Required Tools: 
+        - Laptop or desktop computer
+        - latest version of Chrome
     
-    Functions that are stored in object properties are called “methods”.
-    Methods allow objects to “act” like object.doSomething().
-    Methods can reference the object as this.
-    
-    The value of this is defined at run-time.
-    
-    When a function is declared, it may use this, but that this has no value until the function is called.
-    A function can be copied between objects.
-    When a function is called in the “method” syntax: object.method(), the value of this during the call is object.
+    Steps to Success:
+        - Think => find out what you don't know and learn it by playing with it (sandboxing).
+        - Design => use what you have just learned to layout a solution to the problem.
+        - Test => create a series of expectations for behavior that will indicate if you have been successful.
+        - Create => write the code!
 
-    <h2>CH 5 Objects</h2>
-    Each property is a key-value pair, separated by commas. 
-    To create an object literal, simply enter a pair of curly braces. 
-    You can access the property using the square bracket notation: [name]
-    Each symbol has a unique value, which means that using them as property keys avoids any naming clashes if you mistakenly use the same value for two different property keys.
-    It’s even possible for an object to contain other objects. These are known as nested objects. 
-
-    Modifiers
-    Modifiers can be placed after a token to deal with multiple occurrences of that token:
-
-    ? makes the preceding token in the regular expression optional
-    * matches one or more occurrences of the preceding token
-    + matches one or more occurrences of the preceding token
-    {n} matchesnoccurrences of the preceding token
-    {n,} matches at leastnoccurrences of the pattern
-    {,m} matches at mostmoccurrences of the preceding token
-    {n,m} matches at leastnand at mostmoccurrences of the preceding token
-    ^ marks the position immediately before the first character in the string
-    $ marks the position immediately after the last character in the string
-    <h2>Chapter 5 Summary</h2>
-        Objects are a collection of key-value pairs placed inside curly braces {}.
-        Objects have properties that can be any JavaScript value. If it’s a function, it’s known as amethod.
-        An object’s properties and methods can be accessed using either dot notation or square bracket notation.
-        Objects are mutable, which means their properties and methods can be changed or removed.
-        Objects can be used as parameters to functions, which allows arguments to be entered in any order, or omitted.
-        Nested objects can be created by placing objects inside objects.
-        JSON is a portable data format that uses JavaScript object literals to exchange information.
-        The Math object gives access to a number of mathematical constants.
-        The Math object can be used to perform mathematical calculations.
-        The Date object can be used to create date objects.
-        Once you’ve created a Date object, you can use the getter methods to access information about that date.
-        Once you’ve created a Date object, setter methods can be used to change information about that date.
-        The Regex object can be used to create regular expressions.
-    <h2>CH. 6 The Document Object Model</h2>
-    The DOM provides several methods that allow us to access any element on a page. These methods will return a node object or a node list, which is an array-like object.
-    These objects can then be assigned to a variable and be inspected or modified. 
-   
-    All nodes have a numerical code to signify what type they are. These are summmarized in the table below.
-    Code	Type
-    1	element
-    2	attribute
-    3	text
-    8	comment
-    9	body
-
-    <h2>Chapter 6 Summary</h2>
-        The Document Object Model is a way of representing a page of HTML as a tree of nodes.
-        The document.getElementById() , document.getElementsByClassName() , document.getElementsByTagNames() and document.querySelector() can be used to access elements on a page.
-        The parentNode() , previousSibling() , nextSibling() , childNodes() and children() methods can be used to navigate around the DOM tree.
-        An element’s attributes can be accessed using the getAttribute() method, and updated using the setAttribute() method.
-        The createElement() and createTextNode() methods can be used to create dynamic markup on the fly.
-        Markup can be added to the page using the appendChild() and insertBefore() methods.
-        Elements can be replaced using the replaceChild() method, and removed using the removeChild() method.
-        The innerHTML property can be used to insert raw HTML directly into the DOM.
-        The CSS properties of an element can be changed by accessing the style property.
-
-    <h2>CH. 7 Events</h2>
-    Event Listeners are like setting a notification to alert you when something happens.
-    JavaScript, on the other hand, uses anon-blockingapproach that usesevent listenersto listen out for any clicks on the page.
-    Code to attach an event listener - document.body.addEventListener("click", doSomething); 
-    The type property returns the type of event that occurred, such as click.
-    Mouse and keyboard events are types of events.
-
-    <h2>Chapter 7 Summary</h2>
-        Events occur when a user interacts with a web page.
-        An event listener is attached to an element, then invokes a callback function when the event occurs.
-        The event object is passed to the callback function as an argument, and contains lots of properties and methods relating to the event.
-        There are many types of event, including mouse events, keyboard events, and touch events.
-        You can remove an event using the removeEventListener method.
-        The default behavior of elements can be prevented using the preventDefault() function.
-        Event propagation is the order the events fire on each element.
-        Event delegation is when an event listener is added to a parent element to capture events that happen to its children elements.
-
-    <br><br>
-    <h2>Examples</h2>
-    Make the user say Hello!
-    </pre>
-    <script>
-        let user = {
-            name: "John",
-            age: 30
-        };
-
-        /*user.sayHi = function() {
-            alert("Hello!");
-        };
-
-        user.sayHi(); // Hello!*/
-        
-        function sayHi(){
-            alert("Hello!")
-        };
-
-        user.sayHi = sayHi;
-        user.sayHi();
-    </script>
-    <script>    
-
-        const superman = {
-    name: 'Superman',
-    'real name': 'Clark Kent',
-    height: 75,
-    weight: 235,
-    hero: true,
-    villain: false,
-    allies: ['Batman','Supergirl','Superboy'],
-    fly() {
-        return 'Up, up and away!';
-    }
-};
-
-</script> 
-   
- 
-   
- 
-    
+    Questions: 
+        - None at this time
+    </pre> 
 </main>    
 </body>
 </html>
