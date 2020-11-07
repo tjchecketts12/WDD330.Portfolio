@@ -16,103 +16,40 @@
     </header>
 
 <main>
-        <div class="reading">
-            <div class="pattern1">
-                <h2>Call Methods</h3>
-                  Method syntax:  myfunction.call(parameter)<br>
-                  This method can be used to set the value of this inside a function.<br>
-                  <div class="example">
-                      Example:<br>
-                      Function myfunction(){ <br>
-                          return “Hi, my name is ${this.name}”;<br>
-                      }<br>
-                      const jacob = { name: ‘Jacob’ };<br>
-                      const rani = { name: ‘Rani’ };<br>
-                      myfunction.call(Jacob);<br>
-                      output: “Hi, my name is Jacob”<br>
-                      myfunction.call(rani);<br>
-                      output: “Hi, my name is Rani”<br>
-                      <br>
-                  </div>
-                
-                  ***to make a function more generalized***<br>
-                  Function myfunction(greeting=”Hi”){<br>
-                      return “${ greeting }, my name is ${ this.name}”;<br>
-                  myfunction.call(jacob, ‘How do you do’);<br>
-                  output: “How do you do, my name is Jacob”<br>
-                  myfunction.call(rani);<br>
-                  output: “Hi, my name is rani”<br>
-                  *************************************<br>
-                  In myfunction(greeting=”Hi”), greeting=”Hi” is setting up a default greeting word in case there is no specific input is passed to the function. <br>
-                  **** If call function is not referring an object as this in its body, it can be used by providing null the its first argument. <br>
-                  <div class="example">
-                      Example:<br>
-                      Square.call(null, 4)  <br>
-                      Output: 16 <br>
-                      ++++ apply() method will work in the same way. However apply() method will receive argument as an array even those there is only one argument. <br>
-                  </div>
-                  <div class="example">
-                      Example:<br>
-                      Square.apply(null, [4]) <br>
-                      Output: 16 <br>   
-                  </div>
-                   
-            </div>
-            <div class="pattern2">
-                  <h2>Custom Properties</h2>
-                      It is possible to add properties of function to any object in javaScript.<br>
-                  <div class="example">
-                      Example:<br>
-                      Square.description = “squares a number that is provided as an argument”<br>
-                  </div>  
-                  <h3>Memoization</h3>
-                  Memoizaiton is same as caching.<br>
-                  Function can store caches for better response time. Especially when function takes time to calculate or compute a return value.<br>
-                  <div class="example">
-                      Example:<br>
-                      Function square(x){<br>
-                      Square.cache = square.cache || {};<br>
-                      If (!square.cache[x]) {<br>
-                          Square.cache[x] = x*x;<br>
-                      }<br>
-                      return square.cache[x]<br>
-                      }<br>
-                      Square(3); output: 9<br>
-                      Square(-11); output: 121<br>
-                      Square.cache; output: {“3”: 9, “-11”: 121}<br>
-                  </div>
-                  <h3>Immediately Invoked Function Expressions</h3>
-                  IIFE is an anonymous function that is invoked as soon as it is defined.<br>
-                  <div class="example">
-                      Example:<br>
-                      (function(){<br>
-                      Const temp = “World”;<br>
-                      Console.log(“Hello ${temp}”);<br>
-                      })();<br>
-                      Output: “Hello World”<br>
+    <pre>
+        <h2>CH 11 Further Functions</h2>
+        Summary
+        - Functions have built-in properties such as length , but can have custom properties added.
+        - All functions have call() and apply() methods that can invoke a function with the value of this bound to an object that is provided as an argument.
+        - Immediately Invoked Function Expressions or IIFEs are functions that are enclosed in parentheses and immediately followed by double parentheses so they’re invoked. They are useful for namespacing variables and setting default values.
+        - Functions are able to dynamically redefine themselves in the body of the function, depending on certain conditions.
+        - A recursive function will keep invoking itself until a certain condition is met.
+        - A callback is a function that’s provided as an argument to another function.
+        - Callbacks are frequently used in asynchronous programming as part of the event loop. This means that a program can continue to run in a single thread while waiting for another task to be completed.
+        - Promises can be used instead of callbacks to deal with multiple asynchronous actions in sequence. They also provide a nicer mechanism for handling errors.
+        - Functions that return other functions are known as higher-order functions.
+        - A closure is the process of keeping a reference to a variable available outside the scope of the function it was originally defined in.
+        - A generator is created by placing an asterisk character (*) after the function keyword.
+        - A generator function will return an iterator object that provides a next() method, which returns the next value in a sequence that is defined in the generator function.
+        - Functional programming involves breaking processes down into steps that can be applied as a series of functions.
+        - Pure functions are functions that don't rely on the state of the code they are called from, have no side-effects, and always give the same result when given the same arguments (referential transparency).
+        - Currying or partial application is the process of applying one argument at a time to a function. A new function is returned until all the arguments have been used.
   
-                  </div>
-                  <h3>Temporary Variables</h3>
-                  Once variable is been declared, it is not able to remove a variable from its scope.<br>
-                  Temporary variables are used for when variable is only required temporarily. To do this, use temporary variable called temp.<br>
-                  Let a = 1;<br>
-                  Let b = 2;<br>
-                  (()=>{<br>
-                  Const temp = a;<br>
-                  a = b;<br>
-                  b = tmep;<br>
-                  })();<br>
-                  a; output 2<br>
-                  b; output 1<br>
-                  console.log(temp); output: Error: “temp is not defined”<br>
-                  another way to do :<br>
-                  let [a,b] = [1,2];<br>
-                  [a,b] = [b,a];<br>
-                  a; output: 2<br>
-                  b; output: 1<br>
+        <br><br>
+        <h2>CH 13 Ajax</h2>
+        Summary
+        - Ajax is a technique for sending and receiving data asynchronously in the background.
+        - The data can be sent in many forms, but it is usually in JSON.
+        - Ajax can be used for making partial page updates without having to do a full page reload.
+        - Ajax can be used for communicating with external APIs.
+        - Ajax requests can be made using the Fetch API.
+        - The Response interface allows you to control the response received from a request or to create your own response objects.
+        - The Request interface allows you to create a request object that contains information about the request being made, such as the URL and headers.
+        - The Headers interface allows you to create HTTP headers that can be added to a request or response object.
+        - Requests can retrieve data using a GET request, or send data using a POST request.
+        - The FormData interface makes it easier to send data from forms.
   
-            </div>
-        </div>
+      </pre>
         
 </main>
 </body>
