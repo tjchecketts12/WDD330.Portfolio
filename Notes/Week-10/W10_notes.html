@@ -17,33 +17,52 @@
 
 <main>
     <pre>
-      <h2>>CH9: The Window Object</h2>
-        - The window object is the global object in a browser.
-        - Global variables are actually properties of the window object in a browser environment.
-        - alert , confirm() , and prompt() are all methods of the window object, and open dialogs that halt the execution of the program.
-        - The window.navigator object gives information about the user’s browser and operating system, although it can be unreliable.
-        - The window.location object provides information about the URL of the current page.
-        - The window.history object keeps information about the pages that have been visited in the session.
-        - You can open, close, resize, and move windows (although, this doesn’t mean you should!).
-        - The window.screen object provides information about the user’s screen.
-        - document.write() is an archaic method of writing text to the document and should be avoided.
-        - Cookies can be used to store small pieces of information between requests using the document.cookie property.
-        - The window.setTimeout() method can be used to invoke a function after a set amount of time. It can be canceled using the clearTimeout() method.
-        - The window.setInterval() method can be used to repeatedly invoke a function. It can be stopped using the clearInterval() method.
-        - The window.requestAnimationFrame() method can be used to produce smooth and optimized animation by utilizing the browser's built-in graphics capabilities. It can be canceled using the cancelAnimationFrame() method.
+      <h2>>MDN: Validating Forms</h2>
+        - Client-side form validation sometimes requires JavaScript if you want to customize styling and error messages, 
+          but it always requires you to think carefully about the user. Always remember to help your users correct the data they provide. 
+          To that end, be sure to:
+            - Display explicit error messages.
+            - Be permissive about the input format.
+            - Point out exactly where the error occurs, especially on large forms.
+        
+        - Once you have checked that the form is filled out correctly, the form can be submitted. 
       <br><br>
-      <h2>CH 14 HTML5 API's</h2>
-        - HTML5.1 is the latest incarnation of the Hypertext Markup Language. It covers a variety of technologies, including several APIs that are accessible using JavaScript.
-        - data- attributes help to embed custom data into a web page that can then be used to enhance the user experience with JavaScript.
-        - The Web Storage API allows key-value pairs to be stored on the user’s device in a similar way to cookies, but without the same storage restrictions.
-        - The Geolocation API allows you to access the geographic coordinates of the user’s device, as long as the user gives permission.
-        - The Web Worker API can be used to perform computationally intensive tasks in the background, which helps to avoid websites becoming unresponsive.
-        - Websockets are a new protocol for communicating over the internet, and allow real-time, two-way communication.
-        - The Notification API allows you to display notifications on the user's system.
-        - The <audio> and <video> elements can be employed to embed audio tracks and video clips in a web page. They also have a Media API that can help control the playback using JavaScript.
-        - The canvas element can be used to dynamically draw geometric shapes, text, and images on a web page in real-time using JavaScript.
-        - A shim or polyfill is a piece of code that adds support of missing features to older browsers.
-
+      <h2>MDN: Using Fetch</h2>
+        - The fetch specification differs from jQuery.ajax() in three main ways:
+            - The Promise returned from fetch() won’t reject on HTTP error status even if the response is an HTTP 404 or 500. 
+              Instead, it will resolve normally (with ok status set to false), and it will only reject on network failure or 
+              if anything prevented the request from completing.
+            - fetch() can receive cross-site cookies; you can establish a cross site session using fetch. 
+            - fetch won’t send cookies, unless you set the credentials init option. (Since Aug 25, 2017. The spec changed the 
+              default credentials policy to same-origin. Firefox changed since 61.0b13.)
+        - Checking that the fetch was successful
+            - A fetch() promise will reject with a TypeError when a network error is encountered or CORS is misconfigured on 
+              the server-side, although this usually means permission issues or similar — a 404 does not constitute a network 
+              error, for example. An accurate check for a successful fetch() would include checking that the promise resolved, 
+              then checking that the Response.ok property has a value of true. 
+        - Headers
+            - The Headers interface allows you to create your own headers object via the Headers() constructor.
+        - Response Objects
+            - Response instances are returned when fetch() promises are resolved. The most common response properties you'll use are:
+                - Response.status — An integer (default value 200) containing the response status code.
+                - Response.statusText — A string (default value "OK"), which corresponds to the HTTP status code message.
+                - Response.ok — seen in use above, this is a shorthand for checking that status is in the range 200-299 inclusive. This returns a Boolean.
+        - Body 
+            - Both requests and responses may contain body data. A body is an instance of any of the following types:
+                - ArrayBuffer
+                - ArrayBufferView (Uint8Array and friends)
+                - Blob/File
+                - string
+                - URLSearchParams
+                - FormData
+            - The Body mixin defines the following methods to extract a body (implemented by both Request and Response). These all return a promise that 
+              is eventually resolved with the actual content.
+                - arrayBuffer()
+                - blob()
+                - json()
+                - text()
+                - formData()
+            - This makes usage of non-textual data much easier than it was with XHR.
     </pre>
 </main>    
 </body>
